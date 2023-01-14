@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <img src="images/gpic.png" alt="logo">
+        <h1>Rock, Paper, Scissor</h1>
+    </div>
+    <div class="score-container">
+        <div class="score">
+            <span id="lcount">0</span>
+            <span>-</span>
+            <span id="wcount">0</span>
+        </div>
+    </div>
+    <div class="image row">
+        <div class="col">
+            <h2 class="comp">(Computer)</h2>
+            <img src="images/bot.png" id="botpic" alt="computer-choice"><br><br><br>
+            <h2 id="cside">Choice</h2>
+        </div>
+        <div class="col">
+            <h2>(You)</h2>
+            <img src="images/user.png" id="userpic" alt="Your-choice"><br><br><br>
+            <h2 id="yside">User</h2>
+        </div>
+    </div>
+    <div class="choice">
+        <select name="choose" id="choose" onchange="picChange()">
+            <option value="Select">--Choose--</option>
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissor">Scissor</option>
+        </select>
+    </div>
+    <div class="play-bt">
+        <button class="play-btn" id="playbtn" onclick="gameFunction()">Play</button>
+    </div>
+    <div id="wbox" style="width: 30%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);display: none;background-color: rgb(252 255 43 / 98%);border-radius: 21px;height: 300px;">
+        <h2 style="text-align: center;text-transform: uppercase;font-size: 1.6rem;margin-top: 60px;">&#128525 You Win &#128525</h2>
+        <button id="playgn" onclick="refresh()" style="margin-left:33%;margin-top: 90px;">Play again</button>
+    </div>
+    <div id="lbox" style="width: 30%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);display: none;background-color: rgb(252 255 43 / 98%);border-radius: 21px;height: 300px;">
+        <h2 style="text-align: center;text-transform: uppercase;font-size: 1.6rem;margin-top: 60px;">&#128525 You Lose &#128525</h2>
+        <button id="playgn" onclick="refresh()" style="margin-left:33%;margin-top: 90px;">Play again</button>
+    </div>
+    <div id="dbox" style="width: 30%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);display: none;background-color: rgb(252 255 43 / 98%);border-radius: 21px;height: 300px;">
+        <h2 style="text-align: center;text-transform: uppercase;font-size: 1.6rem;margin-top: 60px;">&#128525 Match Draw &#128525</h2>
+        <button id="playgn" onclick="refresh()" style="margin-left:33%;margin-top: 90px;">Play again</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
